@@ -1,0 +1,29 @@
+[% IF page_site && page_name && page_num && cur_page && cur_page <= page_num && cur_page > 0 %]
+<div class="paging">
+    <a class="first" href="[% c.uri_for('/') %][% page_site %]/[% page_name %]/[% parent_id %][% IF parent_id; '/'; END %][% 1 %]">&nbsp;</a>
+    <a class="prev" href="[% c.uri_for('/') %][% page_site %]/[% page_name %]/[% parent_id %][% IF parent_id; '/'; END %][% IF cur_page - 1 >= 1%][% cur_page - 1 %][% ELSE %]1[% END %]">&nbsp;</a>
+    [% IF cur_page - 5 >= 0 %]
+    <a href="[% c.uri_for('/') %][% page_site %]/[% page_name %]/[% parent_id %][% IF parent_id; '/'; END %][% 1 %]">1</a>
+    <span>...</span>
+    <a href="[% c.uri_for('/') %][% page_site %]/[% page_name %]/[% parent_id %][% IF parent_id; '/'; END %][% cur_page - 2 %]">[% cur_page - 2 %]</a>
+    <a href="[% c.uri_for('/') %][% page_site %]/[% page_name %]/[% parent_id %][% IF parent_id; '/'; END %][% cur_page - 1 %]">[% cur_page - 1 %]</a>
+    [% ELSE %]
+    [% i = 1; WHILE i < cur_page %]
+			<a href="[% c.uri_for('/') %][% page_site %]/[% page_name %]/[% parent_id %][% IF parent_id; '/'; END %][% i %]">[% i %]</a>
+			[% i = i + 1 ;END %]
+			[% END %]
+			<a class="selected" href="[% c.uri_for('/') %][% page_site %]/[% page_name %]/[% parent_id %][% IF parent_id; '/'; END %][% cur_page %]">[% cur_page %]</a>
+			[% IF page_num - cur_page >= 5 %]
+      <a href="[% c.uri_for('/') %][% page_site %]/[% page_name %]/[% parent_id %][% IF parent_id; '/'; END %][% cur_page + 1 %]">[% cur_page + 1 %]</a>
+      <a href="[% c.uri_for('/') %][% page_site %]/[% page_name %]/[% parent_id %][% IF parent_id; '/'; END %][% cur_page + 2 %]">[% cur_page + 2 %]</a>
+      <span>...</span>
+      <a href="[% c.uri_for('/') %][% page_site %]/[% page_name %]/[% parent_id %][% IF parent_id; '/'; END %][% page_num %]">[% page_num %]</a>
+      [% ELSE %]
+      [% i = cur_page + 1; WHILE i <= page_num %]
+				      <a href="[% c.uri_for('/') %][% page_site %]/[% page_name %]/[% parent_id %][% IF parent_id; '/'; END %][% i %]">[% i %]</a>
+				      [% i = i + 1; END %]
+				      [% END %]
+				      <a class="next" href="[% c.uri_for('/') %][% page_site %]/[% page_name %]/[% parent_id %][% IF parent_id; '/'; END %][% IF cur_page + 1 <= page_num %][% cur_page + 1 %][% ELSE %][% page_num %][% END %]">&nbsp;</a>
+				      <a class="last" href="[% c.uri_for('/') %][% page_site %]/[% page_name %]/[% parent_id %][% IF parent_id; '/'; END %][% page_num %]">&nbsp;</a>
+  </div>
+  [% END %]

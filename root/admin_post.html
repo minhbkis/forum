@@ -1,0 +1,94 @@
+[% INCLUDE 'admin_header.html' %]
+<div class="admin_content_input article_search">
+  <form id="search" name="search" action="[% c.uri_for('/admin/post/1') %]" method="post">
+    <label>タイトル</label>
+    <input type="text" name="title" value="[% title %]" />
+    <label>内容</label>
+    <input type="text" name="content" value="[% content %]" />
+    <label>ユーザ</label>
+    <select id="user-id" name="user_id">
+      <option value="-1" [% IF ! user_id %]selected[% END %]>-----</option>
+      [% WHILE (user = users.next) %]
+      <option value="[% user.id %]" [% IF user.id == user_id; "selected"; END %]>[% user.username %]</option>
+      [% END %]
+      <option value="0" [% IF user_id == 0; "selected"; END %]>お客様</option>
+    </select>
+    <label>トピック</label>
+    <select id="topic-id" name="topic_id">
+      <option value="0" [% IF ! topic_id %]selected[% END %]>-----</option>
+      [% WHILE (topic = topics.next) %]
+      <option value="[% topic.id %]" [% IF topic.id == topic_id; "selected"; END %]>[% topic.title %]</option>
+      [% END %]
+    </select>
+    <label>スレッド(まずトピックを選択)</label>
+    <select id="thread-id" name="thread_id">
+      <option value="0" [% IF ! thread_id %]selected[% END %]>-----</option>
+      [% WHILE (thread = threads.next) %]
+      <option value="[% thread.id %]" [% IF thread.id == thread_id; "selected"; END %]>[% thread.title %]</option>
+      [% END %]
+    </select>
+    <input class="submit" type="submit" name="submit" value="検索" />
+    <a href="[% c.uri_for('/admin/post/1') %]">リセット</a>
+  </form>
+  <div class="line"></div>
+  <ul class="table">
+    <li class="title">
+      <div class="col1">
+        <input class="checkall" type="checkbox" name="checkall" />
+      </div>
+      <div class="col2">
+        <p>ID</p>
+      </div>
+      <div class="col3">
+        <p>利用者</p>
+      </div>
+      <div class="col4">
+        <p>筋道</p>
+      </div>
+      <div class="col5">
+        <p>名前</p>
+      </div>
+      <div class="col6">
+        <p>内容</p>
+      </div>
+      <div class="col7">
+        <p>作成時間</p>
+      </div>
+      <div class="col8">
+        <p>最後の作成時間</p>
+      </div>
+      <em class="clear"></em>
+    </li>
+    [% WHILE (post = posts.next) %]
+    <li>
+      <div class="col1">
+        <input type="checkbox" name="id" value="[% post.id %]" />
+      </div>
+      <div class="col2">
+        <p>[% post.id %]</p>
+      </div>
+      <div class="col3">
+        <p>[% IF post.user.username %][% post.user.username %][% ELSE %]Guest[% END %]</p>
+      </div>
+      <div class="col4">
+        <p>[% post.thread.title %]</p>
+      </div>
+      <div class="col5">
+        <a href="[% c.uri_for('/post/index/edit/') %][% post.id %]">[% post.title %]</a>
+      </div>
+      <div class="col6">
+        <p>[% post.content %]</p>
+      </div>
+      <div class="col7">
+        <p>[% post.created_date %]</p>
+      </div>
+      <div class="col8">
+        <p>[% post.last_modifed %]</p>
+      </div>
+      <em class="clear"></em>
+    </li>
+    [% END %]
+  </ul>
+  [% INCLUDE 'paging.html' %]
+</div>
+[% INCLUDE 'admin_footer.html' %]

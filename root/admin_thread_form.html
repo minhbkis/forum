@@ -1,0 +1,39 @@
+[% INCLUDE 'admin_header.html' %]
+<form name="post" action="[% c.uri_for("/thread/index/") %][% IF thread_edit %]edit[% ELSE %]new[% END %]" method="post" enctype="multipart/form-data">
+  <div class="admin_content_input">
+    <fieldset>
+      <legend>New User</legend>
+      [% FOREACH err IN errs %]
+      <p class="red error">[% err %]</p>
+      [% END %]
+      <div>
+        <label>&nbsp;</label>
+        <input type="hidden" name="id" value="[% thread_edit.id %]" />
+      </div>
+      <div>
+	<label>Select a topic</label>
+	<select name="topic_id">
+	  [% WHILE (topic = topics.next) %]
+	  <option value="[% topic.id %]">[% topic.title %]</option>
+	  [% END %]
+	</select>
+      </div>
+      <div>
+        <label>Title</label>
+        <input type="text" name="title" maxlength="100" value="[% thread_edit.title %]" /><span class="red">*</span>
+      </div>
+      <div>
+	<label>Description</label>
+	<textarea name="description">[% thread_edit.description %]</textarea>
+      </div>
+      <div>
+	<label>Actived</label>
+	<select name="actived">
+	  <option value="1" [% IF thread_edit.actived == 1%]selected[% END %]>Yes</option>
+	  <option value="0" [% IF thread_edit.actived == 0%]selected[% END %]>No</option>
+	</select>
+      </div>
+    </fieldset>
+  </div>
+</form>
+[% INCLUDE 'admin_footer.html' %]

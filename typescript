@@ -1,0 +1,133 @@
+Script started on Sun 05 Aug 2012 11:48:34 PM ICT
+]0;minhbkpro@dhcppc8:/home/minhbkpro/forum[?1034h[root@dhcppc8 forum]# script/forum_server.pl -r
+[debug] Debug messages enabled
+[debug] Statistics enabled
+[debug] Loaded plugins:
+.----------------------------------------------------------------------------.
+| Catalyst::Plugin::ConfigLoader  0.30                                       |
+'----------------------------------------------------------------------------'
+
+[debug] Loaded dispatcher "Catalyst::Dispatcher"
+[debug] Loaded engine "Catalyst::Engine"
+[debug] Found home "/home/minhbkpro/forum"
+[debug] Loaded Config "/home/minhbkpro/forum/forum.conf"
+[debug] Loaded components:
+.-----------------------------------------------------------------+----------.
+| Class                                                           | Type     |
++-----------------------------------------------------------------+----------+
+| forum::Controller::Forum                                        | instance |
+| forum::Controller::Root                                         | instance |
+| forum::Model::Forum                                             | instance |
+| forum::Model::Forum::Post                                       | class    |
+| forum::Model::Forum::Thread                                     | class    |
+| forum::Model::Forum::Topic                                      | class    |
+| forum::Model::Forum::User                                       | class    |
+| forum::View::HTML                                               | instance |
+'-----------------------------------------------------------------+----------'
+
+[debug] Loaded Private actions:
+.----------------------+--------------------------------------+--------------.
+| Private              | Class                                | Method       |
++----------------------+--------------------------------------+--------------+
+| /default             | forum::Controller::Root              | default      |
+| /end                 | forum::Controller::Root              | end          |
+| /index               | forum::Controller::Root              | index        |
+| /forum/index         | forum::Controller::Forum             | index        |
+'----------------------+--------------------------------------+--------------'
+
+[debug] Loaded Path actions:
+.-------------------------------------+--------------------------------------.
+| Path                                | Private                              |
++-------------------------------------+--------------------------------------+
+| /                                   | /index                               |
+| /...                                | /default                             |
+| /forum/index/                       | /forum/index                         |
+'-------------------------------------+--------------------------------------'
+
+[info] forum powered by Catalyst 5.90015
+failed to listen to port 3000: Address already in use at /usr/local/share/perl5/HTTP/Server/PSGI.pm line 94, <DATA> line 1000.
+
+Saw changes to the following files:
+ - /home/minhbkpro/forum/lib/forum/Controller/Forum.pm (modify)
+
+Attempting to restart the server
+
+[debug] Debug messages enabled
+[debug] Statistics enabled
+[debug] Loaded plugins:
+.----------------------------------------------------------------------------.
+| Catalyst::Plugin::ConfigLoader  0.30                                       |
+'----------------------------------------------------------------------------'
+
+[debug] Loaded dispatcher "Catalyst::Dispatcher"
+[debug] Loaded engine "Catalyst::Engine"
+[debug] Found home "/home/minhbkpro/forum"
+[debug] Loaded Config "/home/minhbkpro/forum/forum.conf"
+[debug] Loaded components:
+.-----------------------------------------------------------------+----------.
+| Class                                                           | Type     |
++-----------------------------------------------------------------+----------+
+| forum::Controller::Forum                                        | instance |
+| forum::Controller::Root                                         | instance |
+| forum::Model::Forum                                             | instance |
+| forum::Model::Forum::Post                                       | class    |
+| forum::Model::Forum::Thread                                     | class    |
+| forum::Model::Forum::Topic                                      | class    |
+| forum::Model::Forum::User                                       | class    |
+| forum::View::HTML                                               | instance |
+'-----------------------------------------------------------------+----------'
+
+[debug] Loaded Private actions:
+.----------------------+--------------------------------------+--------------.
+| Private              | Class                                | Method       |
++----------------------+--------------------------------------+--------------+
+| /default             | forum::Controller::Root              | default      |
+| /end                 | forum::Controller::Root              | end          |
+| /index               | forum::Controller::Root              | index        |
+| /forum/index         | forum::Controller::Forum             | index        |
+'----------------------+--------------------------------------+--------------'
+
+[debug] Loaded Path actions:
+.-------------------------------------+--------------------------------------.
+| Path                                | Private                              |
++-------------------------------------+--------------------------------------+
+| /                                   | /index                               |
+| /...                                | /default                             |
+| /index/                             | /forum/index                         |
+'-------------------------------------+--------------------------------------'
+
+[info] forum powered by Catalyst 5.90015
+failed to listen to port 3000: Address already in use at /usr/local/share/perl5/HTTP/Server/PSGI.pm line 94, <DATA> line 1000.
+^C
+]0;minhbkpro@dhcppc8:/home/minhbkpro/forum[root@dhcppc8 forum]# script/forum_server.pl -r
+[debug] Debug messages enabled
+[debug] Statistics enabled
+[debug] Loaded plugins:
+.----------------------------------------------------------------------------.
+| Catalyst::Plugin::ConfigLoader  0.30                                       |
+'----------------------------------------------------------------------------'
+
+[debug] Loaded dispatcher "Catalyst::Dispatcher"
+[debug] Loaded engine "Catalyst::Engine"
+[debug] Found home "/home/minhbkpro/forum"
+[debug] Loaded Config "/home/minhbkpro/forum/forum.conf"
+[debug] Loaded components:
+.-----------------------------------------------------------------+----------.
+| Class                                                           | Type     |
++-----------------------------------------------------------------+----------+
+| forum::Controller::Forum                                        | instance |
+| forum::Controller::Root                                         | instance |
+| forum::Model::Forum                                             | instance |
+| forum::Model::Forum::Post                                       | class    |
+| forum::Model::Forum::Thread                                     | class    |
+| forum::Model::Forum::Topic                                      | class    |
+| forum::Model::Forum::User                                       | class    |
+| forum::View::HTML                                               | instance |
+'-----------------------------------------------------------------+----------'
+
+[debug] Loaded Private actions:
+.----------------------+--------------------------------------+--------------.
+| Private              | Class                                | Method       |
++----------------------+--------------------------------------+--------------+
+| /default             | forum::Controller::Root              | default      |
+| /end                 | forum::Controller

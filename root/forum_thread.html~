@@ -1,0 +1,34 @@
+[% INCLUDE 'forum_header.html' %]        
+[% INCLUDE 'paging.html' %]
+<div id="new-thread">
+  <a href="[% c.uri_for('/thread/index/new/') %][% topic_id %]">新しいスレッド</a>
+</div><!-- End #new-thread -->
+<div id="threads" class="forum-list">
+  <div class="title"><label>[% threads.search_rs({}).first.topic.title %]</label></div>
+  <ul>
+    [% WHILE (thread = threads.next) %]
+    [% #FOREACH thread IN threads %]
+    <li>
+      <img class="forum-status-img" alt="forum img" src="[%c.uri_for("/images/thread_icon.gif")%]" />
+      <div class="no1">
+        <img src="[%c.uri_for("/images/text.png")%]" />
+        <a href="[% c.uri_for('/forum/post/') %][% thread.id %]/1">[% thread.title %]</a>
+        <p href="#">[% thread.description %]</p>
+      </div>
+      <div class="no2">
+        <p>返信: [% count = 0 %][% FOREACH post = thread.post %][% count = count + 1 %][% END %][% count - 1 %]</p>
+        <p>表示: [% thread.view %]</p>
+	<p>[% thread.answer %]</p>
+      </div>
+      <div class="no3">
+	[% last_modifed = posts.search_rs({thread_id => thread.id}).get_column('last_modifed').func('MAX') %]
+	[% last_post_user_id = posts.search_rs({last_modifed => last_modifed}).first.user_id %]
+        <a class="second" href="#">[% IF last_post_user_id == 0 %]Guest[% ELSE %][% users.search_rs({id => last_post_user_id}).first.username %][% END %]</a>
+        <p href="#">[% last_modifed %]</p>
+      </div>
+    </li>
+    [% END %]
+  </ul>
+</div>
+[% INCLUDE 'paging.html' %]
+[% INCLUDE 'forum_footer.html' %]
