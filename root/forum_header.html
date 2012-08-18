@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <title>簡単日本語</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link rel="stylesheet" type="text/css" href="[%c.uri_for("/css/style.css")%]" />
+	
+	<script type="text/javascript" language="javascript" src="[% c.uri_for("/js/jquery-1.4.2.min.js") %]"></script>
+	<script type="text/javascript" language="javascript" src="[% c.uri_for("/js/javascript.js") %]"></script>
+    </head>
+    <body>
+      <div id="wrapper">
+        <div id="header">
+          <div id="top-bar">
+	    <h3 id="slogan">簡単日本語</h3>
+	    [% IF ! c.user_exists %]
+            <form id="login-form" action="[% c.uri_for('/login/index/forum') %]" method="post">
+              <input class="text username" name="username" type="text" />
+              <input class="text password" name="password" type="password" />
+              <input class="submit" type="submit" value="ログイン" />
+	      <a href="[% c.uri_for('/forum/register') %]">登録</a>
+            </form>
+	    [% ELSE %]
+	    <div id="user-info">
+	      <p>ようこそ<a href="[% c.uri_for('/user/index/edit/') %][% c.user.get('id') %]">[% c.user.get('username') %]</a></p>
+	      <a href="[% c.uri_for('/logout/index/forum') %]"><img src="[% c.uri_for('/images/logout.png') %]" /></a>
+	    </div>
+	    [% END %]
+          </div><!-- End #top-bar -->
+          <div id="banner">
+            <img alt="banner" src="[%c.uri_for("/images/fujiyama.jpg")%]" />
+          </div><!-- End #banner -->
+        </div><!-- End #header -->
+	<div id="forum">
+	  <ul id="forum-link">
+	    <li class="first"><a href="[% c.uri_for('/forum') %]">フォーラム</a></li>
+	    [% FOREACH forum_link IN forum_links %]
+	    <li><a href="[% forum_link.link %]">[% forum_link.title %]</a></li>
+	    [% END %]
+	  </ul><!-- End #forum-link -->

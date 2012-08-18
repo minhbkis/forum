@@ -1,0 +1,29 @@
+[% INCLUDE 'forum_header.html' %]
+<div id="register" class="forum-list">
+  <div class="title"><label>Register</label></div>
+  [% FOREACH err IN errs %]
+  <p class="red error">[% err %]</p>
+  [% END %]
+  <form action="[% c.uri_for("/thread/index/") %][% IF thread_edit %]edit[% ELSE %]new[% END %]" method="post" enctype="multipart/form-data" >
+    <input type="hidden" name="topic_id" value="[% topic_id %]" />
+    <input type="hidden" name="id" value="[% thread_edit.id %]" />
+    <input type="hidden" name="page_site" value="forum" />
+    <div>
+      <label>Title</label>
+      <input type="text" name="title" value="[% thread_id.title %]" /><span class="red">*</span>
+    </div>
+    <div>
+      <label>Description</label>
+      <input type="text" name="description" value="[% thread_id.description %]" />
+    </div>
+    <div>
+      <label>Content</label>
+      <textarea name="content"></textarea><span class="red">*</span>
+    </div>
+    <div class="submit">
+      <input type="submit" value="[% IF thread_edit %]Edit[% ELSE %]Register[% END %]" />
+      <input type="reset" value="Reset" />
+    </div>
+  </form>
+</div><!-- End #register -->
+[% INCLUDE 'forum_footer.html' %]

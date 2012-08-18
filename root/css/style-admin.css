@@ -1,0 +1,438 @@
+*{margin: 0;padding: 0}
+
+@font-face{
+    font-family: "japanese";
+    src : url("umeplus-p-gothic.ttf");
+}
+
+body{
+    font-family: japanese;
+}
+
+/*login*/
+#admin_banner,.admin_banner1,.admin_banner2{
+    height: 54px;
+    color: white;
+    line-height: 40px;
+    font-weight: bold;
+}
+#admin_banner{
+    background: url(../images/admin_banner_middle.png) repeat-x center;
+}
+.admin_banner2{
+    padding-left: 10px;
+    float: left;
+}
+#admin_banner .admin-user-info{
+    float: right;
+    font-size: 13px;
+    margin-right: 20px;
+}
+#admin_banner .admin-user-info span{
+    color: #ff9400;
+    margin-left: 10px;
+}
+#admin_content{
+    border: 1px solid #cccccc;
+    margin: auto;
+    text-align: center;
+    padding-bottom: 10px;
+    /width: 1000px;
+}
+#admin_login{
+    width: 555px;
+    height: 270px;
+    margin: 50px auto 100px;
+    border: 1px solid #cccccc;
+    padding: 20px;
+}
+.admin_login_title{
+    font-weight: bold;
+    color: #025A8D;
+    margin-top: 20px;
+    padding-left: 10px;
+    margin-bottom: 10px;
+}
+.admin_login_left{
+    float: left;
+    width: 190px;
+    height: 200px;
+}
+.admin_login_left img{
+    box-shadow: 0 0 5px #025a8d;
+}
+.admin_login_left p{
+    color: #025A8D;
+    font-size: 12px;
+    text-decoration: none;
+    display: block;
+    margin: 10px 0px;
+    box-shadow: -2px 2px 2px;
+}
+.admin_login_left a:hover{
+    text-decoration: underline;
+}
+.admin_login_left div{
+    width: 150px;
+    height: 137px;
+    background: url(../images/admin_lock.png) no-repeat center;
+}
+.admin_login_right{
+    width: 340px;
+    height: 200px;
+    background: #f4f4f4;
+    float: right;
+    border: 1px solid #ccc;
+}
+.admin_login_right div{
+    margin: 30px 0px;
+}
+.admin_login_right div label{
+    display: block;
+    float: left;
+    width: 130px;
+    padding-left: 10px;
+    font-size: 13px;
+}
+input.text{
+    border: 1px solid silver;
+}
+.admin_login_right div.submit{
+    margin-left: 200px;
+    width: 90px;
+}
+.admin_login_right div.submit div,.admin_login_right div.submit div input{
+    height: 26px;
+    width: 90px;
+    display: block;
+}
+.admin_login_right div.submit div input{
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+.admin_login_right div.submit div input:hover{
+    color: #025A8D;
+}
+.admin_login_right div.submit div.submit1{
+    background: url(../images/login_button.png) no-repeat left;
+}
+.admin_login_right div.submit div.submit2{
+    background: url(../images/login_next.png) no-repeat right;
+    padding-right: 10px;
+}
+
+/*admin*/
+#admin_menu{
+    border: 1px solid #ccc;
+    height: 30px;
+    background: #f0f0f0;
+}
+#admin_menu ul li{
+    list-style: none;
+    float: left;
+    height: 30px;
+    line-height: 30px;
+    border-left: 1px solid #fff;
+    border-right: 1px solid #d8d8d8;
+}
+#admin_menu ul li a{
+    text-decoration: none;
+    color: #333;
+    font-size: 12px;
+    font-weight: bold;
+    height: 30px;
+    line-height: 30px;
+    padding: 0px 10px;
+    display: block;
+    float: left;
+}
+#admin_menu ul li a:hover{
+    background: #DBE4E9;
+}
+.view_site,.log_out{
+    height: 30px;
+    width: 70px;
+    /width: 70px;
+    float: right;
+    line-height: 30px;
+    font-size: 11px;
+    padding-left: 20px;
+}
+.view_site a,.log_out a{
+    text-decoration: none;
+    color: #025A8D;
+}
+.view_site{
+    background: url(../images/view_site.png) no-repeat center left;
+}
+.log_out{
+    background: url(../images/log_out.png) no-repeat center left;
+}
+
+/*admin content post*/
+.admin_content_menu{
+    height: 60px;
+    margin: 10px auto;
+    text-align: left;
+    background: #f0f0f0;
+    border: 1px solid #ccc;
+    -moz-border-radius: 8px; /* Firefox */
+    -webkit-border-radius: 8px; /* Safari and Chrome */
+}
+.admin_content_menu_title{
+    height: 60px;
+    line-height: 60px;
+    float: left;
+    color: #146295;
+    font-weight: bold;
+    font-size: 19px;
+    padding-left: 65px;
+    background: url(../images/article-add.png) no-repeat left;
+    background-position: 10px;
+}
+.admin_article_list{
+    background: url(../images/article-manager.png) no-repeat left;
+    background-position: 10px;
+}
+.save,.cancel,.trash,.edit,.new{
+    float: right;
+    height: 50px;
+    margin-top: 3px;
+    cursor: pointer;
+}
+.save a{
+    background: url(../images/article-save.png) no-repeat top left;
+}
+.cancel a{
+    background: url(../images/article-cancel.png) no-repeat top left;
+}
+.trash a{
+    background: url(../images/article-trash.png) no-repeat top left;
+}
+.edit a{
+    background: url(../images/article-edit.png) no-repeat top left;
+}
+.new a{
+    background: url(../images/article-new.png) no-repeat top center;
+}
+.save input{
+    border: none;
+    background: #f0f0f0;
+    cursor: pointer;
+}
+.cancel a,.new a,.edit a,.trash a,.save a{
+    text-decoration: none;
+    color: black;
+    font-size: 13px;
+    text-align: center;
+    display: block;
+    height: 32px;
+    width: 40px;
+    margin-right: 20px;
+}
+.cancel a span,.new a span,.edit a span,.trash a span,.save a span{
+    text-align: center;
+    position: relative;
+    top: 30px;
+}
+
+/*admin content input*/
+.admin_content_input{
+    margin: auto;
+    text-align: left;
+    padding: 20px;
+    background: #f0f0f0;
+    border: 1px solid #ccc;
+    overflow: hidden;
+    -moz-border-radius: 8px; /* Firefox */
+    -webkit-border-radius: 8px; /* Safari and Chrome */
+}
+.admin_content_input fieldset{
+    padding: 20px;
+    border: 1px solid #ccc;
+    -moz-border-radius: 8px; /* Firefox */
+    -webkit-border-radius: 8px; /* Safari and Chrome */
+    background: white;
+}
+.admin_content_input fieldset div{
+    clear: both;
+    padding: 10px 0px;
+}
+.admin_content_input fieldset legend{
+    font-size: 15px;
+    color: #146295;
+}
+.admin_content_input div label{
+    display: block;
+    float: left;
+    font-size: 14px;
+    width: 200px;
+    height: 20px;
+    line-height: 20px;
+}
+.admin_content_input div input{
+    width: 200px;
+}
+.admin_content_input div input{
+    border: 1px solid #ccc;
+    height: 20px;
+    line-height: 20px;
+}
+.admin_content_input div textarea{
+    border: 1px solid #ccc;
+    height: 70px;
+    width: 300px;
+}
+.admin_content_input div select{
+    padding: 0 10px 0 0;
+}
+.admin_content_input div.avatar button{
+    background-color: #146295;
+    background-image: -moz-linear-gradient(center top , #4D90FE, #4787ED);
+    border: 1px solid #3079ED;
+    color: #FFFFFF !important;
+    border-radius: 2px 2px 2px 2px;
+    display: inline-block;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    text-decoration: none !important;
+    margin-right: 30px;
+}
+.admin_content_input div.avatar{
+    position: relative;
+}
+.admin_content_input div.avatar input[type=text]{
+    position: relative;
+    top: -2px;
+}
+.admin_content_input div.avatar input.avatar{
+    display: block;
+    left: 200px;
+    opacity: 0;
+    position: absolute;
+    top: 11px;
+}
+.admin_content_input span{
+    font-size: 13px;
+}
+.red{
+    color: red;
+}
+#article_type{
+    float: left;
+    margin-right: 20px;
+}
+#article_subject{
+    position: relative;
+    left: -100px;
+}
+.article_subject_tuvan,.article_subject_khonggiandep{
+    display: none;
+}
+
+/*article list*/
+.article_search form{
+    margin-bottom: 30px;
+}
+.article_search label,.article_search input,.article_search select{
+    float: left;
+    font-size: 13px;
+    display: block;
+}
+.article_search label{
+    margin-right: 5px;
+}
+.article_search form .submit,.article_search form .reset{
+    border: 1px solid #ccc;
+    background: white;
+    margin: 0px 10px;
+}
+.article_search #article_subject{
+    position: relative;
+    left: 0px;
+}
+.line{
+    border-top: 1px solid #ccc;
+    clear: both;
+    width: 1300px;
+    margin: auto;
+}
+
+/*paging*/
+.paging{
+    color: white;
+    font-weight: bold;
+    font-size: 13px;
+}
+.paging p{
+    font-size: 11px;
+    float: left;
+    margin-right: 10px;
+    color: black;
+}
+.paging a{
+    color: orange;
+    margin-left: 3px;
+    text-decoration: none;
+}
+div.avatar img.avatar-image{
+    display: none;
+    position: absolute;
+    max-height: 150px;
+    max-width: 150px;
+    bottom: 0px;
+    left: 500px;
+}
+.error{
+    font-size: 11px;
+}
+
+/* paging */
+.paging{
+    float: right;
+    background: white;
+    height: 16px;
+    margin: 0px 20px 10px 0px;
+}
+.paging a{
+    display: block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    float: left;
+    border: 1px solid #ccc;
+    text-align: center;
+    margin: 0px 1px;
+    color: #1c1c1c;
+    cursor: pointer;
+}
+.paging a.first{
+    background: url("../images/first.png") no-repeat center;
+}
+.paging a.prev{
+    background: url("../images/prev.png") no-repeat center;
+}
+.paging a.next{
+    background: url("../images/next.png") no-repeat center;
+}
+.paging a.last{
+    background: url("../images/last.png") no-repeat center;
+}
+.paging a.selected{
+    background: #3c3c3c;
+    color: white;
+}
+.paging span{
+    display: block;
+    height: 20px;
+    line-height: 20px;
+    float: left;
+}
+#bottom-paging{
+    margin: 10px 20px 10px 0px;
+}
+#admin_content .paging{
+    margin-top: 10px;
+}

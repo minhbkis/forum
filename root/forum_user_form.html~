@@ -1,0 +1,41 @@
+[% INCLUDE 'forum_header.html' %]
+<div id="register" class="forum-list">
+  <div class="title"><label>Register</label></div>
+  [% FOREACH err IN errs %]
+  <p class="red error">[% err %]</p>
+  [% END %]
+  <form action="[% c.uri_for("/user/index/") %][% IF user_edit %]edit[% ELSE %]new[% END %]" method="post" enctype="multipart/form-data" >
+    <div>
+      <label>User Name</label>
+      <input type="text" name="username" [% IF user_edit %] value="[% user_edit.username %]" readonly="readonly" style="color: #999" [% END %] /><span class="red">*</span>
+    </div>
+    <div>
+      <label>Pass Word</label>
+      <input type="password" name="password" value="[% user_edit.password %]" /><span class="red">*</span>
+    </div>
+    <div>
+      <label>Re Pass Word</label>
+      <input type="password" name="re_password" value="[% user_edit.password %]" /><span class="red">*</span>
+    </div>
+    <div>
+      <label>Full Name</label>
+      <input type="text" name="full_name" maxlength="50" value="[% user_edit.full_name %]" />
+    </div>
+    <div>
+      <label>Email</label>
+      <input type="text" name="email" maxlength="20" value="[% user_edit.email %]" />
+    </div>
+    <div class="avatar">
+      <label>Avatar</label>
+      <input type="text" />
+      <button>Browse...</button>
+      <input class="avatar" type="file" name="avatar" />
+      <img class="avatar-image" src="[% IF user_edit.avatar != '' %][% c.uri_for('/root/avatar/Firefox_wallpaper.png') %][% END %]" />
+    </div>
+    <div class="submit">
+      <input type="submit" value="[% IF user_edit %]Edit[% ELSE %]Register[% END %]" />
+      <input type="reset" value="Reset" />
+    </div>
+  </form>
+</div><!-- End #register -->
+[% INCLUDE 'forum_footer.html' %]

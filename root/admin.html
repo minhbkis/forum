@@ -1,0 +1,104 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/style-admin.css" />
+
+    <script type="text/javascript" language="javascript" src="js/prototype.js"></script>
+    <script type="text/javascript" language="javascript" src="js/jquery-1.4.2.min.js"></script>
+    <script type="text/javascript" language="javascript" src="js/javascript.js"></script>
+    <script type="text/javascript">
+        jQuery.noConflict();
+    </script>
+</head>
+<body>
+    <div id="admin">
+        <div id="admin_banner">
+            <div class="admin_banner1">
+                <div class="admin_banner2">
+                    Administration
+                </div>
+            </div>
+        </div>
+        <div id="admin_menu">
+            <ul>
+                <li><a href="#">Site</a></li>
+                <li><a href="#">Users</a></li>
+                <li><a href="#">Menus</a></li>
+                <li><a href="#">Content</a></li>
+                <li><a href="#">Help</a></li>
+            </ul>
+            <div class="log_out"><a href="#">Log out</a></div>
+            <div class="view_site"><a href="#">View Site</a></div>
+        </div>
+        <div id="admin_content">
+            <form name="post" action="#" method="post" onsubmit="return check()">
+            <div class="admin_content_menu">
+                <div class="admin_content_menu_title">
+                    Article Manager: Add New Article
+                </div>
+                <div class="cancel">
+                    <span></span>
+                    <a href="#">Cancel</a>
+                </div>
+                <div class="save">
+                    <span></span>
+                    <input type="submit" name="submit" value="Save" />
+                </div>
+            </div>
+            <div class="admin_content_input">
+                <fieldset>
+                    <legend>New Article</legend>
+                    <div>
+                        <label>Tên bài viết</label>
+                        <input id="article_name" type="text" name="name" maxlength="50" /><span class="red">*</span>
+                    </div>
+                    <div>
+                        <label>Loại bài viết</label>
+                        <select id="article_type" name="article_type" onchange="change()">
+                            <option value="" selected>Lựa chọn loại bài ...</option>
+                            <option value="pspacetuvan">P.Space tư vấn</option>
+                            <option value="khonggiandep">Không gian đẹp</option>
+                            <option value="sanphamchiakhoatraotay">Sản phẩm chìa khóa trao tay</option>
+                            <option value="gocxaydung">Góc xây dựng</option>
+                            <option value="tuvanpspace">Tư vấn P.Space</option>
+                            <option value="thongtinchay">Thông tin chạy</option>
+                        </select>
+                        <label>Chủ đề</label>
+                        <select id="article_subject" name="article_subject">
+                            <option value="" selected>Lựa chọn chủ đề ...</option>
+                            <option class="article_subject_tuvan" value="tuvanphongthuy">Tu vấn phong thủy</option>
+                            <option class="article_subject_tuvan" value="tuvankientruc">Tu vấn kiến trúc</option>
+                            <option class="article_subject_tuvan" value="tuvanxaydung">Tu vấn xây dựng</option>
+                            <option class="article_subject_khonggiandep" value="noithat">Nội thất</option>
+                            <option class="article_subject_khonggiandep" value="ngoaithat">Ngoại thất</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label>Ngày viết</label>
+                        <input type="text" name="date" />
+                    </div>
+                    <div>
+                        <label>Hình ảnh</label>
+                        <input class="image" type="file" name="image" />
+                    </div>
+                    <div>
+                        <label>Phần mở đầu</label>
+                        <textarea name="start" rows="5" cols="50"></textarea>
+                    </div>
+                    <div>
+                        <label>Nội dung</label>
+                        <textarea name="content" rows="10" cols="70"></textarea>
+                    </div>
+                </fieldset>
+            </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

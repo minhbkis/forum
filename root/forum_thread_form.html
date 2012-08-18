@@ -1,0 +1,29 @@
+[% INCLUDE 'forum_header.html' %]
+<div id="register" class="forum-list">
+  <div class="title"><label>スレッド　フォーム</label></div>
+  [% FOREACH err IN errs %]
+  <p class="red error">[% err %]</p>
+  [% END %]
+  <form action="[% c.uri_for("/thread/index/") %][% IF thread_edit %]edit[% ELSE %]new[% END %]" method="post" enctype="multipart/form-data" >
+    <input type="hidden" name="topic_id" value="[% topic_id %]" />
+    <input type="hidden" name="id" value="[% thread_edit.id %]" />
+    <input type="hidden" name="page_site" value="forum" />
+    <div>
+      <label>タイトル</label>
+      <input type="text" name="title" value="[% thread_id.title %]" /><span class="red">*</span>
+    </div>
+    <div>
+      <label>説明</label>
+      <input type="text" name="description" value="[% thread_id.description %]" />
+    </div>
+    <div>
+      <label>内容</label>
+      <textarea name="content"></textarea><span class="red">*</span>
+    </div>
+    <div class="submit">
+      <input type="submit" value="[% IF thread_edit %]編集[% ELSE %]新しいスレッド[% END %]" />
+      <input type="reset" value="リセット" />
+    </div>
+  </form>
+</div><!-- End #register -->
+[% INCLUDE 'forum_footer.html' %]
